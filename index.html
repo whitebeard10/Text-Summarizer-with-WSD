@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Summary Generator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 50px;
+        font-size: 3em;
+        color: rgb(41, 118, 92);
+      }
+      form {
+        margin: 0 auto;
+        max-width: 600px;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 1.2em;
+      }
+      textarea {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+      }
+
+      input[type="submit"] {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: rgb(129, 101, 63);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2em;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #505356;
+      }
+      hr {
+        border: none;
+        border-top: 1px solid #ddd;
+        margin: 50px 0;
+      }
+      h2 {
+        font-size: 2em;
+      }
+      p {
+        font-size: 1.2em;
+        line-height: 1.6;
+      }
+      .output {
+        max-width: 800px;
+        margin: auto;
+      }
+
+      /* Style the output */
+      .summary {
+        margin-top: 50px;
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+      .rouge-score {
+        margin-top: 10px;
+        font-size: 16px;
+      }
+
+      /* Style the buttons */
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: #0062cc;
+      }
+
+      .footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  color: rgb(255, 0, 0);
+}
+    </style>
+  </head>
+  <body>
+    <h1>Text summarization using WSD</h1>
+    <form method="POST">
+      <label for="paragraph">Input Paragraph:</label><br />
+      <textarea name="paragraph" rows="10" cols="50"></textarea><br /><br />
+      <input type="submit" value="Generate Summary" />
+    </form>
+    {% if summary %}
+    <div class="output">
+      <hr />
+      <hr />
+      <h2>Best Summary:</h2>
+      <p class="summary">{{ summary }}</p>
+      <p class="rouge-score">ROUGE Score: {{ rouge_score }}</p>
+      <p class="footer"> &#169 Designed by Aviansh, Aryan, Adit, Jeewan</p> 
+    </div>
+    {% endif %}
+    
+  </body>
+</html>
