@@ -1,5 +1,34 @@
-# Text-Summarizer-with-WSD
-This project is a text summarization system with Word Sense Disambiguation (WSD) implemented using Python and various NLP libraries. The system takes a paragraph of text as input and performs Part-of-Speech tagging and Named Entity Recognition using the spaCy library. It then identifies repeating words with different POS tagging and creates a list of potential target words for WSD. The system generates summaries for each target word using the T5 transformer model from Hugging Face, and compares the results using the Rouge evaluation metric. The system also uses an n-gram model to predict the most appropriate word for each target word, based on the context. The output is the summary with the highest Rouge score.
+# Text Summarizer with WSD
 
-The system is implemented as a Flask web application . The application allows users to input a paragraph of text and get a summary with the best Rouge score. The project includes a detailed README.txt file with instructions on how to run the application, a requirements.txt file with all the dependencies, and a license file. The code is well-documented and follows best practices for Python development.
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Flask](https://img.shields.io/badge/Flask-Web%20Framework-lightgrey)
+![NLP](https://img.shields.io/badge/NLP-spaCy%20%7C%20T5-orange)
+
+An advanced web-based text summarization system that leverages **Word Sense Disambiguation (WSD)** and pre-trained **T5 models** to generate highly accurate and context-aware summaries. 
+
+## 🧠 Overview
+
+Traditional text summarizers often struggle with words that have multiple meanings depending on their surrounding context. This project solves that ambiguity by integrating Word Sense Disambiguation into the summarization pipeline. 
+
+By utilizing **spaCy** for robust natural language processing and **N-gram models** for candidate word selection, the system accurately identifies and contextualizes repeating words with differing meanings. It evaluates multiple generated summaries against each other using **ROUGE scores** to ensure the user only receives the highest quality output.
+
+## ✨ Features
+
+- **Abstractive Summarization**: Leverages pre-trained T5 models to generate human-like summaries rather than just extracting sentences.
+- **Word Sense Disambiguation (WSD)**: Intelligently identifies and processes repeating words with different meanings to preserve the original text's true context.
+- **N-gram Candidate Selection**: Enhances token selection and text generation logic.
+- **Automated ROUGE Evaluation**: Internally compares different summarization results and outputs the optimal summary based on its ROUGE metric.
+- **Interactive Web Interface**: A clean, accessible frontend served via Flask.
+
+## 🛠️ Technologies Used
+
+- **Backend**: Python, Flask
+- **NLP Libraries**: spaCy, NLTK (for n-grams)
+- **Machine Learning**: Pre-trained T5 Models (HuggingFace Transformers)
+- **Evaluation Metrics**: ROUGE Score
+
+## 🚀 Getting Started
+
+### Prerequisites
+Make sure you have Python installed on your local machine.
 
